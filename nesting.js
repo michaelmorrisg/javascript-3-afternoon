@@ -50,7 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
+function employeeUpdater(){
+  employees.map(function(element,i){
+    if(element.firstName === "Theo"){
+      employees.splice(i,1)
+    }
+    if(element.firstName === "Lorie"){
+      element.department = "HR"
+    }
+  })
+  return employees
+}//Code Here
 
 
 
@@ -68,7 +78,15 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
     3. Return the updated array.
 */
 
-//Code Here
+function removeDuplicates(){
+  let newArray = []
+  for(i=0;i<workplaceAccidents.length;i++){
+    if(!newArray.includes(workplaceAccidents[i])){
+      newArray.push(workplaceAccidents[i])
+    }
+  }
+  return newArray
+}//Code Here
 
 
 
@@ -95,10 +113,11 @@ var cat = {
     1. Assign the value of Grumpy's 2nd activity to the grumpyActivity variable below.
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
-
+var grumpyActivity = cat.catFriends[0].activities[1];
+var fluffy2ndFriend = cat.catFriends[1].name;
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+
+
 
 
 
@@ -138,7 +157,14 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+let recordCleaner = function(){
+  myCar.accidents.map(function(element){
+    if(element.atFaultForAccident === true){
+      element.atFaultForAccident = false
+    }
+  })
+  return myCar
+}//Code Here
 
 
 
@@ -156,7 +182,20 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
+function looper(){
+  for(i=0;i<numsArr.length;i++){
+    for(k=0;k<numsArr[i].length;k++){
+      if(k % 2 === 0 ){
+        numsArr[i][k] = 'odd'
+      } else {numsArr[i][k] = "even"
 
-//Code Here
+      }
+    }
+  }
+  return numsArr
+}
+looper()
+console.log(numsArr)//Code Here
+
 
 
